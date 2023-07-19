@@ -1,8 +1,10 @@
 # DiplomJob2023
-# Ссылка на https://burchakov1998.github.io/DiplomJob2023/
+ Ссылка на https://burchakov1998.github.io/DiplomJob2023/
 # описание файлов 
-# index.html это главная страница  
-# index.js это логика  главной страницы
+#это главная страница  
+index.html 
+# это логика  главной страницы
+index.js 
 # hall.html это  страница отображает посадочные места в Зале 
 # hall.js это логика к странице Зала
 # payment.html это  страница подтверждение выбора 
