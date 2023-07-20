@@ -1,7 +1,5 @@
 let selectSeanse = JSON.parse(sessionStorage.selectSeanse);
-let bodyRequest = `event=get_hallConfig&timestamp=${selectSeanse.seanceTimeStamp}
-&hallId=${selectSeanse.hallId}
-&seanceId=${selectSeanse.seanceId}`;
+let bodyRequest = `event=get_hallConfig&timestamp=${selectSeanse.seanceTimeStamp}&hallId=${selectSeanse.hallId}&seanceId=${selectSeanse.seanceId}`;
 
 document.addEventListener("DOMContentLoaded", () => {
   let buttonAcceptin = document.querySelector('.acceptin-button');
@@ -23,8 +21,7 @@ document.addEventListener("DOMContentLoaded", () => {
     }
     confStepWrapper.innerHTML = selectSeanse.hallConfig;
     
-    let chairs = Array.from(document.querySelectorAll
-	('.conf-step__row .conf-step__chair'));
+    let chairs = Array.from(document.querySelectorAll('.conf-step__row .conf-step__chair'));
     buttonAcceptin.setAttribute("disabled", true);
     
     chairs.forEach((chair) => {
@@ -33,8 +30,7 @@ document.addEventListener("DOMContentLoaded", () => {
           return;
         };
         event.target.classList.toggle('conf-step__chair_selected');
-        let chairsSelected = Array.from(document.querySelectorAll
-		('.conf-step__row .conf-step__chair_selected'));
+        let chairsSelected = Array.from(document.querySelectorAll('.conf-step__row .conf-step__chair_selected'));
         if (chairsSelected.length > 0) {
           buttonAcceptin.removeAttribute("disabled");
         } else {
@@ -54,8 +50,7 @@ document.addEventListener("DOMContentLoaded", () => {
       let spanPlaces = Array.from(rows[i].getElementsByClassName("conf-step__chair"));
       for (let j = 0; j < spanPlaces.length; j++) {
         if (spanPlaces[j].classList.contains("conf-step__chair_selected")) {
-          let typePlace = (spanPlaces[j].classList.contains("conf-step__chair_standart")) 
-		  ? "standart" : "vip";
+          let typePlace = (spanPlaces[j].classList.contains("conf-step__chair_standart")) ? "standart" : "vip";
           selectedPlaces.push({
             "row": i+1,
             "place": j+1,
